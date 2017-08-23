@@ -16,11 +16,11 @@ console.log(`Yargs`, argv);
 if(command === 'add'){
     console.log(`Adding new note...`);
 }else if(command === 'list'){
-    console.log(`Listing all notes...`);
+    notes.getAll();
 }else if(command === 'read'){
-    console.log(`Fetching note...`);
+    notes.getNote(`moo`);
 }else if(command === 'remove'){
-    console.log(`Removing this note...`);
+    notes.deleteNote(`moo`);
 }
 else{
     console.log(`Command not recognized...`);
