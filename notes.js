@@ -47,6 +47,7 @@ let removeNote = (title) => {
     let filteredNotes = notes.filter((note) => note.title !== title); //this filters out all notes that do not have a title 
     saveNotes(filteredNotes); //this writes the filtered notes to the file
     console.log(`Removed note named ${title}`);
+    return notes.length !== filteredNotes.length;
 };
 
 module.exports =  {
