@@ -12,13 +12,13 @@ let getNote = (title) => {
     console.log(`Getting note named ${title}`);  
 };
 
-let deleteNote = (title) => {
-    console.log(`Deleting note named ${title}`);
+let removeNote = (title) => {
+    console.log(`Removing note named ${title}`);
 };
 
 module.exports =  {
     addNote,
     getAll,
     getNote,
-    deleteNote
+    removeNote
 };
