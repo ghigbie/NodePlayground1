@@ -43,7 +43,10 @@ let getNote = (title) => {
 };
 
 let removeNote = (title) => {
-    console.log(`Removing note named ${title}`);
+    let notes = fetchNotes();
+    let filteredNotes = notes.filter((note) => note.title !== title); //this filters out all notes that do not have a title 
+    saveNotes(filteredNotes); //this writes the filtered notes to the file
+    console.log(`Removed note named ${title}`);
 };
 
 module.exports =  {
