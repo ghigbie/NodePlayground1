@@ -29,7 +29,13 @@ if(command === 'add'){
 }else if(command === 'list'){
     notes.getAll();
 }else if(command === 'read'){
-    notes.getNote(argv.title);
+    let noteBody = notes.getNote(argv.title);
+    if(noteBody){
+        console.log(`The note, ${argv.title} is below`);
+        console.log(noteBody);
+    }else{
+        console.log(`No note with the title, ${argv.title} could be found`);
+    }
 }else if(command === 'remove'){
     let noteRemoved = notes.removeNote(argv.title);
     let message = noteRemoved ? `The note ${argv.title} was removed.` : `No note was removed.`;
