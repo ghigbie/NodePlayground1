@@ -27,9 +27,10 @@ let addNote = (title, body) => {
         notes.push(note); //pushes a new note to array if duplicateNotes.length has no length
         saveNotes(notes); //adds note array to the file
         console.log(`Adding note:`, note.title, note.body);
+        return note;
     }else{
         console.log(`A note with the title of: ${note.title} already exists.`);
-        console.log(`Please create a new note.`);
+        console.log(`Please create a new note with a different title.`);
     }
 };
 
