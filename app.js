@@ -7,8 +7,9 @@ const yargs = require('yargs');
 const notes = require('./notes.js');
 const argv = yargs.argv;
 
+//let command = process.argv[2]; //using process.argv
+let command = argv._[0]; //this uses lodash to get the argv variale
 
-let command = process.argv[2];
 console.log(`Command: ${command}`);
 console.log(`Process`, process.argv);
 console.log(`Yargs`, argv);
