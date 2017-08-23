@@ -8,12 +8,23 @@ let addNote = (title, body) => {
         body
     };
     
-    let notesString = fs.readFileSync('notes-data.json'); //gets an existing array of notes and converts to string
-    notes = JSON.parse(notesString);//redefines notes array as an array with notes that aready exist if they exist
+    try{
+        let notesString = fs.readFileSync('notes-data.json'); //gets an existing array of notes and converts to string
+        notes = JSON.parse(notesString);//redefines notes array as an array with notes that aready exist if they exist    
+    }catch(e){
+        
+    }
     
-    notes.push(note);//pushes new note to array
-    fs.writeFileSync('notes-data.json', JSON.stringify(notes));
-    console.log(`Adding note`, note.title, note.body);
+    let duplicateNotes = notes.filter((note) => note.title === title); //single line return statement 
+
+    if(duplicateNotes.length === 0){
+        notes.push(note); //pushes a new note to array if duplicateNotes.length has no length
+        fs.writeFileSync('notes-data.json', JSON.stringify(notes)); //adds notes array to the file
+        console.log(`Adding note`, note.title, note.body);
+    }else{
+        console.log(`A note with the title of: ${note.title} already exists.`);
+        console.log(`Please create a new note.`);
+    }
 };
 
 let getAll = () => {
