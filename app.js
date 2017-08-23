@@ -9,14 +9,16 @@ let command = process.argv[2];
 console.log(`command: ${command}`);
 
 if(command === 'add'){
-    console.log(`Adding new note`);
+    console.log(`Adding new note...`);
 }else if(command === 'list'){
-    console.log(`Listing all notes`);
+    console.log(`Listing all notes...`);
 }else if(command === 'read'){
-    console.log(`Read a specific note`);
+    console.log(`Fetching note...`);
 }else if(command === 'remove'){
     console.log(`Removing this note...`);
 }
 else{
-    console.log(`Command not recognized`);
+    console.log(`Command not recognized...`);
 }
+console.log('////////////////');
+console.log(process.argv);
