@@ -5,9 +5,10 @@ const os = require('os');
 const notes = require('./notes.js');
 
 let user = os.userInfo();
-let message = `Yo ${user.username}!`;
+let greetingMessage = `Yo ${user.username}!`;
+let ageMessage = `You are ${notes.age}.`;
 
-fs.appendFile('greetings.txt', message, (err) => {
+fs.appendFile('greetings.txt', `${greetingMessage} ${ageMessage}`, (err) => {
     if(err){
         console.log(`Unable to write file`);
         console.log(err);
