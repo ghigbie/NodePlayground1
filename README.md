@@ -1,3 +1,3 @@
 # Node Playground 1
 
-This repo is for working on NodeJS development.
+This repo is dedicated to working on NodeJS development.
