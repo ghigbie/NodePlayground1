@@ -1,0 +1,11 @@
+{
+  "name": "node-playground-1",
+  "version": "1.0.0",
+  "description": "This repo is for working on NodeJS development.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "George Higbie",
+  "license": "ISC"
+}
