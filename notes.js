@@ -40,13 +40,8 @@ let getAll = () => {
 
 let getNote = (title) => {
     let notes = fetchNotes();
-    let noteBody = notes.filter((note) => {
-       if(note.title === title){
-         return note
-       }else{
-         return false;
-       }
-    });
+    let filteredNotes = notes.filter((note) => note.title === title);
+    return filteredNotes[0];
 };
 
 let removeNote = (title) => {
