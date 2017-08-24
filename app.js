@@ -29,10 +29,13 @@ if(command === 'add'){
 }else if(command === 'list'){
     notes.getAll();
 }else if(command === 'read'){
-    let noteBody = notes.getNote(argv.title);
-    if(noteBody){
-        console.log(`The note, ${argv.title} is below`);
-        console.log(noteBody);
+    let note = notes.getNote(argv.title);
+    if(note){
+        console.log(`Note found!`);
+        console.log(`----------`);
+        console.log(`Title: ${note.title}`);
+        console.log(`Body: ${note.body}`);
+        console.log(`----------`);
     }else{
         console.log(`No note with the title, ${argv.title} could be found`);
     }
