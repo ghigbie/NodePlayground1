@@ -6,12 +6,12 @@ const yargs = require('yargs');
 
 const notes = require('./notes.js');
 
-let titleOptions = {
+const titleOptions = {
                         describe: 'Title of note',
                         demand: true,
                         alias: 't'
                     };
-let bodyOptions = {
+const bodyOptions = {
                         describe: 'Body of note',
                         demand: true,
                         alias: 'b'
