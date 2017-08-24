@@ -5,7 +5,31 @@ const _ = require('lodash');
 const yargs = require('yargs');
 
 const notes = require('./notes.js');
-const argv = yargs.argv;
+const argv = yargs
+    .command('add', 'Add a new note', {
+        title: {
+            describe: 'Title of note',
+            demand: true,
+            alias: 't'
+        },
+        body: {
+            describe: 'Body of note',
+            demand: true,
+            alias: 'b'
+        }
+    })
+    .command('list', 'Lists all of the notes')
+    .command('read', 'Read a specific note', {
+        title: {
+            describe: 'Title of note',
+            demand: true,
+            alias: 't'
+        }
+    }
+    )
+    .help()
+    .argv;
+
 
 //let command = process.argv[2]; //using process.argv
 let command = argv._[0]; //this uses lodash to get the argv variable
