@@ -18,10 +18,7 @@ if(command === 'add'){
     let note = notes.addNote(argv.title, argv.body);
     if(note){
         console.log(`Note created!!!`);
-        console.log(`----------`);
-        console.log(`Title: ${note.title}`);
-        console.log(`Body: ${note.body}`);
-        console.log(`----------`);
+        notes.logNote(note);
     }else{
         console.log(`A note of with this title already exists.`);
         console.log(`Please create a note with a new title.`);
@@ -31,11 +28,8 @@ if(command === 'add'){
 }else if(command === 'read'){
     let note = notes.getNote(argv.title);
     if(note){
-        console.log(`Note found!`);
-        console.log(`----------`);
-        console.log(`Title: ${note.title}`);
-        console.log(`Body: ${note.body}`);
-        console.log(`----------`);
+        console.log(`Note found! Please read below:`);
+        notes.logNote(note);
     }else{
         console.log(`No note with the title, ${argv.title} could be found`);
     }
