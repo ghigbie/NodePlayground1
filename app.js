@@ -23,21 +23,23 @@ if(command === 'add'){
         console.log(`A note of with this title already exists.`);
         console.log(`Please create a note with a new title.`);
     }
-}else if(command === 'list'){
-    notes.getAll();
-}else if(command === 'read'){
-    let note = notes.getNote(argv.title);
-    if(note){
-        console.log(`Note found! Please read below:`);
-        notes.logNote(note);
-    }else{
-        console.log(`No note with the title, ${argv.title} could be found`);
+    }else if(command === 'list'){
+        let allNotes = notes.getAll();
+        console.log(`Printing ${allNotes.length} note(s)`);
+        allNotes.forEach((note) =>notes.logNote(note));
+    }else if(command === 'read'){
+        let note = notes.getNote(argv.title);
+        if(note){
+            console.log(`Note found! Please read below:`);
+            notes.logNote(note);
+        }else{
+            console.log(`No note with the title, ${argv.title} could be found`);
+        }
+    }else if(command === 'remove'){
+        let noteRemoved = notes.removeNote(argv.title);
+        let message = noteRemoved ? `The note ${argv.title} was removed.` : `No note was removed.`;
+        console.log(message);
     }
-}else if(command === 'remove'){
-    let noteRemoved = notes.removeNote(argv.title);
-    let message = noteRemoved ? `The note ${argv.title} was removed.` : `No note was removed.`;
-    console.log(message);
-}
 else{
     console.log(`Command not recognized...`);
 }
